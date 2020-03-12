@@ -10,8 +10,12 @@ export function fetchDevelopersThunk() {
       "https://codaisseur-coders-network.herokuapp.com/developers"
     );
 
-    console.log(response);
-    const action = fetchDevelopersSucces(response.data);
-    dispatch(action);
+    if (getState().developers.count === 0) {
+      const action = fetchDevelopersSucces(response.data);
+      dispatch(action);
+
+    }
+    
   };
 }
+

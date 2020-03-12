@@ -9,7 +9,6 @@ export default function DevelopersList() {
 
   const dispatch = useDispatch();
   const developers = useSelector(selectDevelopers);
-  console.log(developers);
   useEffect(
     function() {
 

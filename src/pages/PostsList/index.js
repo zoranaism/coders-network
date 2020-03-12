@@ -9,7 +9,6 @@ import Container from "react-bootstrap/Container";
 export default function PostsList() {
   const dispatch = useDispatch();
   const posts = useSelector(selectPosts);
-  console.log(posts);
   useEffect(
     function() {
       // async function fetchPosts() {
@@ -32,7 +31,7 @@ export default function PostsList() {
     <Container>
       {posts.map(post => {
         console.log(post);
-        return <Post title={post.title} />;
+        return <Post key={post.id} title={post.title} />;
       })}
     </Container>
   );
