@@ -13,7 +13,6 @@ export function fetchDevelopersThunk() {
     if (getState().developers.count === 0) {
       const action = fetchDevelopersSucces(response.data);
       dispatch(action);
-
     }
     
   };

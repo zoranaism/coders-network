@@ -5,6 +5,7 @@ import PostsList from "./pages/PostsList";
 import DevelopersList from "./pages/DevelopersList";
 import { Route, Switch } from "react-router-dom";
 import Navigation from "./components/Navigation";
+import PostDetails from "./pages/PostDetails";
 
 function App() {
   return (
@@ -12,8 +13,9 @@ function App() {
       <Navigation />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/posts" component={PostsList} />
-        <Route path="/developers" component={DevelopersList} />
+        <Route exact path="/posts" component={PostsList} />
+        <Route exact path="/posts/:id" component={PostDetails} />
+        <Route exact path="/developers" component={DevelopersList} />
       </Switch>
     </div>
   );
